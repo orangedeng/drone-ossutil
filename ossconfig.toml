@@ -1,0 +1,8 @@
+[template]
+src = "ossconfig.tmpl"
+dest = "/root/.ossutilconfig"
+keys = [
+    "/endpoint",
+    "/access/key/id",
+    "/access/key/secret"
+]
