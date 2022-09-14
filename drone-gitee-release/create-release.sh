@@ -15,7 +15,7 @@ NOTE=${PLUGIN_NOTE:-${GITEE_RELEASE_NOTE}}
 DRONE_REPO=${DRONE_REPO}
 
 
-data="{\"tag_name\":\"${DRONE_TAG}\",\"name\":\"${TITLE}\",\"body\":\"${NOTE}\",\"prerelease\":\"${PRERELEASE}\",\"target_commitish\":\"${DRONE_COMMIT}\"}"
+data="{\"access_token\":\"${GITEE_TOKEN}\",\"tag_name\":\"${DRONE_TAG}\",\"name\":\"${TITLE}\",\"body\":\"${NOTE}\",\"prerelease\":\"${PRERELEASE}\",\"target_commitish\":\"${DRONE_COMMIT}\"}"
 url="https://gitee.com/api/v5/repos/${DRONE_REPO}/releases"
 
 curl -v -X POST --header 'Content-Type: application/json;charset=UTF-8' $url -d "${data}"
