@@ -1,6 +1,6 @@
-FROM alpine:3.15
+FROM registry.suse.com/bci/bci-base:15.5
 LABEL Repo="https://github.com/orangedeng/drone-ossutils" Maintainer="orangedeng"
-RUN apk update && apk add ca-certificates
+RUN zypper install -y wget
 ARG OSSUTIL_VERSION=v1.7.13
 ARG CONFIGD_VERSION=v0.16.0
 

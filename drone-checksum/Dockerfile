@@ -5,7 +5,7 @@ ENV GOPROXY=https://goproxy.cn,direct
 ARG VERSION=v0.0.1
 COPY . /go/src/${PKG}
 WORKDIR /go/src/${PKG}
-RUN CGO_ENABLED=0 go build -a -ldflags "-w -extldflags \"-static\" -X main.Version=${VERSION}" \
+RUN CGO_ENABLED=0 go build -x -v -a -ldflags "-w -extldflags \"-static\" -X main.Version=${VERSION}" \
     -tags netgo \
     -o drone-checksum/drone-checksum drone-checksum/main.go
 FROM runner
